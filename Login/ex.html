@@ -1,0 +1,440 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <style>
+
+    .product-container
+{
+    padding: 0 10vw;
+    display: flex;
+    height: 500px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.product-container::-webkit-scrollbar{
+    display: none;
+}
+
+.product-card{
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 40px;
+}
+
+.product-image{
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.product-thumb{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.discount-tag{
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+}
+
+.card-btn{
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.product-card:hover .card-btn{
+    opacity: 1;
+}
+
+.card-btn:hover{
+    background: #efefef;
+}
+
+.product-info{
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+}
+
+.product-brand{
+    text-transform: uppercase;
+}
+
+.product-short-des{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+
+.price{
+    font-weight: 900;
+    font-size: 20px;
+}
+
+.actual-price{
+    margin-left: 20px;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+.pre-btn, .nxt-btn{
+    border: none;
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+}
+
+.pre-btn{
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.nxt-btn{
+    right: 0;
+}
+
+.pre-btn img, .nxt-btn img{
+    opacity: 0.2;
+}
+
+.pre-btn:hover img, .nxt-btn:hover img{
+    opacity: 1;
+}
+header{
+    background-color: darkgoldenrod;
+    opacity: 0.7;
+}
+.nat{
+    background-image: url("cup.jpg");
+    background-size: 100% 100%;
+    height: 100%;
+    width: auto;
+    padding-left: 40px;
+    
+}
+.ml16 {
+  color: #402d2d;
+  padding: 40px 0;
+  font-weight: 800;
+  font-size: 2em;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  overflow: hidden;
+}
+
+.ml16 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin-left: 6%;
+  margin-right: 3%;
+  text-align: center;
+  font-family: arial;
+  
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+    </style>
+    
+  </head>
+  <body>
+    <header>
+        <h3 class="ml16" align="center"><strong>NATURAL HANDCRAFTED CHOCOLATE</strong> </h3>
+    </header>
+    <h2 align="center" >DEALS OF THE DAY</h2>
+    <br>
+    <div>
+    <div class="product-container">
+      <div class="product-card">
+          <div class="product-image">
+              <span class="discount-tag">50% off</span>
+              <img src="Antidot.png" class="product-thumb" alt="">
+              <button class="card-btn">add to whislist</button>
+          </div>
+          <div class="product-info">
+              <h2 class="product-brand">ANTIDOT</h2>
+              <p class="product-short-des">a short line about the cloth..</p>
+              <span class="price">$20</span><span class="actual-price">$40</span>
+          </div>
+      </div>
+      <div class="product-card">
+        <div class="product-image">
+            <span class="discount-tag">20% off</span>
+            <img src="Almonds.png" class="product-thumb" alt="">
+            <button class="card-btn">add to whislist</button>
+        </div>
+        <div class="product-info">
+            <h2 class="product-brand">ALMONDS AND SEASALT</h2>
+            <p class="product-short-des">Organic dark chocolate</p>
+            <span class="price">$20</span><span class="actual-price">$40</span>
+        </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">30% off</span>
+          <img src="tonys.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">TONY'S CHOCOLATE</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">40% off</span>
+          <img src="k'ul.jpeg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">K'UL</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">40% off</span>
+          <img src="jojo.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">JOJO'S CHOCOLATE</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div> 
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">35% off</span>
+          <img src="endengered.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">ENDENGERED</h2>
+          <p class="product-short-des">Strong + velevety dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">16% off</span>
+          <img src="houseGrounded.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">HOUSE-GROUND COCAO</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">33% off</span>
+          <img src="lilys.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">LILY'S EXTRA DARK CHOCOLATE</h2>
+          <p class="product-short-des">Cocoa stovia sweets</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">40% off</span>
+          <img src="lindt.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">LINDT EXCELLENCE</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">50% off</span>
+          <img src="pascha.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">PASCHA VERY DARK</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">30% off</span>
+          <img src="taza.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">TAZA CHOCOLATE</h2>
+          <p class="product-short-des">Organic dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-image">
+          <span class="discount-tag">20% off</span>
+          <img src="raaka.jpg" class="product-thumb" alt="">
+          <button class="card-btn">add to whislist</button>
+      </div>
+      <div class="product-info">
+          <h2 class="product-brand">RAAKA PINK SEASALT</h2>
+          <p class="product-short-des">Pink Seasalt unroasted dark chocolate</p>
+          <span class="price">$20</span><span class="actual-price">$40</span>
+      </div>
+    </div>
+    <button class="pre-btn"><img src="arrow.jpg" alt=""></button>
+    <button class="nxt-btn"><img src="arrow.jpg" alt=""></button>
+  </div>
+  <script>
+    const productContainers = [...document.querySelectorAll('.product-container')];
+    const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+    const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+    productContainers.forEach((item, i) => {
+        let containerDimenstions = item.getBoundingClientRect();
+        let containerWidth = containerDimenstions.width;
+
+        nxtBtn[i].addEventListener('click', () => {
+            item.scrollLeft += containerWidth;
+        })
+
+        preBtn[i].addEventListener('click', () => {
+            item.scrollLeft -= containerWidth;
+        })
+    })
+  </script>
+  <br><br>
+    <div class="nat">
+        <h1 class="ml16">LOVE TO EAT CHOCOLATE</h1>
+    </div><br><br>
+    <script>
+        var textWrapper = document.querySelector('.ml16');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+        anime.timeline({loop: true})
+        .add({
+            targets: '.ml16 .letter',
+            translateY: [-100,0],
+            easing: "easeOutExpo",
+            duration: 1400,
+            delay: (el, i) => 30 * i}).add({
+            targets: '.ml16',
+            opacity: 0,
+            duration: 1500,
+            easing: "easeOutExpo",
+            delay: 1000
+        });
+    </script>
+    <div>
+    <div style="width:90%;padding-left: 50px;padding-right: 20px;">
+        <div class="card" style="float:left;">
+            <img src="Antidot.png" alt="Antidot" style="width:100%">
+            <h1>Antidot</h1>
+            <p class="price">$5.99</p>
+            <p>Mixed chocolate</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        <div class="card" style="float: left;">
+            <img src="Almonds.png" alt="Antidot" style="width:100%">
+            <h1>Antidot</h1>
+            <p class="price">$19.99</p>
+            <p>Mixed chocolate</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        <div class="card" style="float:left">
+            <img src="tonys.jpg" alt="Antidot" style="width:100%">
+            <h1>Antidot</h1>
+            <p class="price">$19.99</p>
+            <p>Mixed chocolate</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    
+    <div style="width:90%;padding-left: 50px;padding-right: 20px;">
+        <div class="card" style="float:left;">
+            <img src="k'ul.jpeg" alt="Antidot" style="width:100%">
+            <h1>Antidot</h1>
+            <p class="price">$5.99</p>
+            <p>Mixed chocolate</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        <div class="card" style="float: left;">
+            <img src="jojo.jpg" alt="Antidot" style="width:100%">
+            <h1>Antidot</h1>
+            <p class="price">$19.99</p>
+            <p>Mixed chocolate</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+        <div class="card" style="float:left">
+            <img src="endengered.jpg" alt="Antidot" style="width:100%">
+            <h1>Antidot</h1>
+            <p class="price">$19.99</p>
+            <p>Mixed chocolate</p>
+            <p><button>Add to Cart</button></p>
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
+
+
